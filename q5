@@ -1,0 +1,27 @@
+void assignGrades(List<int> scores) {
+  int best = scores[0];
+
+  for (int i = 1; i < scores.length; i++) {
+    if (scores[i] > best) {
+      best = scores[i];
+    }
+  }
+
+  for (int i = 0; i < scores.length; i++) {
+    if (scores[i] >= best - 10) {
+      print("Student $i: A");
+    } else if (scores[i] >= best - 20) {
+      print("Student $i: B");
+    } else if (scores[i] >= best - 30) {
+      print("Student $i: C");
+    } else if (scores[i] >= best - 40) {
+      print("Student $i: D");
+    } else {
+      print("Student $i: F");
+    }
+  }
+}
+
+void main() {
+  assignGrades([90, 80, 70, 60, 40]);
+}

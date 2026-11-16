@@ -1,0 +1,28 @@
+void analyzeScores(List<int> scores) {
+  int sum = 0;
+
+  for (int i = 0; i < scores.length; i++) {
+    sum += scores[i];
+  }
+
+  double average = sum / scores.length;
+
+  int aboveOrEqual = 0;
+  int below = 0;
+
+  for (int i = 0; i < scores.length; i++) {
+    if (scores[i] >= average) {
+      aboveOrEqual++;
+    } else {
+      below++;
+    }
+  }
+
+  print("Average = $average");
+  print("Above or equal = $aboveOrEqual");
+  print("Below = $below");
+}
+
+void main() {
+  analyzeScores([80, 90, 70, 60, 100]);
+}
